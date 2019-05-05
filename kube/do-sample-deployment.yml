@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: do-k8s-sample-app
-          image: cwheikki/do-k8s-sample-app:latest
+          image: cwheikki/do-k8s-sample-app:$COMMIT_SHA1
           ports:
             - containerPort: 80
               name: http
