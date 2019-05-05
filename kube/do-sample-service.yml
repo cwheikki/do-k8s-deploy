@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: do-k8s-sample-app
+  namespace: default
+  labels:
+    app: do-k8s-sample-app
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      name: http
+  selector:
+    app: do-k8s-sample-app

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: do-k8s-sample-app
+  namespace: default
+  labels:
+    app: do-k8s-sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: do-k8s-sample-app
+  template:
+    metadata:
+      labels:
+        app: do-k8s-sample-app
+    spec:
+      containers:
+        - name: do-k8s-sample-app
+          image: cwheikki/do-k8s-sample-app:latest
+          ports:
+            - containerPort: 80
+              name: http
